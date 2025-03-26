@@ -1,0 +1,19 @@
+@import "variables.scss";
+
+@function get4BasedSize($multiplier: 1, $unit: "px") {
+  $newDigit: $base * $multiplier;
+  @if $unit != "" {
+    @return unquote($newDigit + $unit);
+  } @else {
+    @return $newDigit;
+  }
+}
+
+@function calcRem($size) {
+  $remSize: calc($size / $base-font-size);
+  @return #{$remSize}rem;
+}
+
+@function calcFlexBasis($cols, $gap) {
+  @return calc((100% / $cols) - $gap + ($gap / $cols));
+}

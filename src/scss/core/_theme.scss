@@ -1,0 +1,18 @@
+.light {
+  --primary-main: #{$primary-main};
+  --primary-light: #{$primary-light};
+  --primary-dark: #{$primary-dark};
+
+  --black: #{$black};
+  --white: #{$white};
+
+  --dark-text-primary: #{$dark-text-primary};
+  --dark-text-secondary: #{$dark-text-secondary};
+
+  --white-text-primary: #{$white-text-primary};
+  --white-text-secondary: #{$white-text-secondary};
+  --white-text-tertiary: #{$white-text-tertiary};
+
+  --header-background: #{$header-background};
+  --overlay-color: #{$overlay-color};
+}
