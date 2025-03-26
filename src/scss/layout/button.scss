@@ -1,0 +1,20 @@
+.button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: get4BasedSize(1);
+  min-height: 43px;
+
+  &--primary {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    border: 1px solid var(--white);
+  }
+
+  &--secondary {
+    background-color: var(--white);
+    color: var(--dark-text-secondary);
+    border: 1px solid var(--button-secondary-border);
+  }
+}

@@ -1,0 +1,49 @@
+.promo {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: get4BasedSize(10);
+
+  background: url("../img/pixel/promo-bg.jpg") center / cover no-repeat;
+
+  @include responsive(tablet) {
+    min-height: 850px;
+    gap: get4BasedSize(20);
+  }
+
+  &__title {
+    span {
+      color: var(--primary-light);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: get4BasedSize(2.5);
+  }
+
+  &__list {
+    list-style: inside;
+    list-style-type: " - ";
+    display: flex;
+    flex-direction: column;
+    gap: get4BasedSize(1.25);
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: get4BasedSize(4);
+
+    @include responsive(tablet) {
+      gap: get4BasedSize(7.5);
+    }
+
+    .button {
+      width: 183px;
+    }
+  }
+}

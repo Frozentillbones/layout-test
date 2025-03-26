@@ -28,8 +28,12 @@
   }
 
   &__h1 {
-    font-size: calcRem(48);
+    font-size: calcRem(40);
     font-weight: 700;
+
+    @include responsive(tablet) {
+      font-size: calcRem(48);
+    }
   }
 
   &__h2 {
