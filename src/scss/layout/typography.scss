@@ -37,8 +37,12 @@
   }
 
   &__h2 {
-    font-size: calcRem(36);
+    font-size: calcRem(28);
     font-weight: 800;
+
+    @include responsive(tablet) {
+      font-size: calcRem(36);
+    }
   }
 
   &__subtitle {
@@ -58,6 +62,11 @@
 
   &__body3 {
     font-size: calcRem(13);
+    font-weight: 400;
+  }
+
+  &__body4 {
+    font-size: calcRem(18);
     font-weight: 400;
   }
 }

@@ -1,0 +1,34 @@
+.footer {
+  min-height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: get4BasedSize(4);
+  padding-top: get4BasedSize(7.5);
+  padding-bottom: get4BasedSize(7.5);
+
+  background-color: var(--footer-background);
+
+  &__copyright,
+  &__payments,
+  &__contacts {
+    flex-basis: 100%;
+    color: var(--white-text-primary);
+  }
+
+  &__payments,
+  &__contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: get4BasedSize(4) get4BasedSize(9.5);
+  }
+}
+
+.payments,
+.contacts {
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: get4BasedSize(2.5);
+  }
+}

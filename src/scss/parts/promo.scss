@@ -1,16 +1,12 @@
 .promo {
-  position: relative;
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: get4BasedSize(10);
+  @extend %flex-section;
+  padding-top: calc($mobile-header-height + $gutter-16);
 
   background: url("../img/pixel/promo-bg.jpg") center / cover no-repeat;
 
   @include responsive(tablet) {
+    padding-top: calc($desktop-header-height + $gutter-16);
     min-height: 850px;
-    gap: get4BasedSize(20);
   }
 
   &__title {

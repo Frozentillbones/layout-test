@@ -39,3 +39,17 @@ $breakpoints-laptop-padding: max(
     padding: 0 $breakpoints-laptop-padding;
   }
 }
+
+%flex-section {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: get4BasedSize(10);
+  padding-bottom: $gutter-16;
+
+  @include responsive(tablet) {
+    gap: get4BasedSize(20);
+    padding-bottom: $gutter-24;
+  }
+}
