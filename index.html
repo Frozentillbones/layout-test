@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./img/favicon/favicon.ico" />
-    <link rel="stylesheet" href="css/index.min.css?_v=20250328135208" />
+    <link rel="stylesheet" href="css/index.min.css?_v=20250328213155" />
 
     <title>Employcity</title>
   </head>
@@ -13,12 +13,14 @@
   <body>
     <header class="container header">
       <a href="/" class="header__logo raleway raleway__logo raleway--uppercase"
-        >LoremIpsum.<span>Net</span></a
+        >LoremIpsum.<span class="header__span">Net</span></a
       >
 
       <nav class="header__nav nav">
         <ul class="nav__list">
-          <li class="nav__item lato lato__link lato--uppercase">
+          <li
+            class="nav__item nav__item--active lato lato__link lato--uppercase"
+          >
             <a href="#" class="nav__link">Бизнес</a>
           </li>
           <li class="nav__item lato lato__link lato--uppercase">
@@ -47,8 +49,9 @@
     <main>
       <section class="container promo">
         <h1 class="promo__title lato lato__h1 lato--uppercase">
-          <span>Lorem ipsum</span> dolor sit amet consectetur
-          <span>adipiscing</span>
+          <span class="promo__span">Lorem ipsum</span> dolor sit amet
+          consectetur
+          <span class="promo__span">adipiscing</span>
         </h1>
         <div class="promo__content">
           <h2 class="promo__subtitle lato lato__subtitle">
@@ -83,7 +86,7 @@
       <section class="container orders">
         <div class="orders__title">
           <h2 class="lato lato__h2 lato--align-center lato--uppercase">
-            оформление <span>заказа</span>
+            оформление <span class="orders__span">заказа</span>
           </h2>
           <p class="lato lato__body4 lato--align-center">
             Перед заполнением формы ознакомьтесь с нашей схемой работы!
@@ -209,7 +212,6 @@
       <p class="footer__copyright lato lato__body3 lato--align-center">
         © 2018 «LoremIpsum.net» Все права защищены.
       </p>
-      <span class="footer__divider"></span>
       <div class="footer__payments payments">
         <div class="payments__item">
           <svg class="icon">
@@ -230,7 +232,6 @@
           <p class="lato lato__body3">Web Money</p>
         </div>
       </div>
-      <span class="footer__divider"></span>
       <div class="footer__contacts contacts">
         <a
           class="contacts__item lato lato__body3"
@@ -250,6 +251,6 @@
       </div>
     </footer>
 
-    <script src="js/index.min.js?_v=20250328135208"></script>
+    <script src="js/index.min.js?_v=20250328213155"></script>
   </body>
 </html>
