@@ -1,3 +1,25 @@
+@mixin step-dots {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    height: 6px;
+
+    background-image: radial-gradient(
+        circle at 10% 50%,
+        var(--white) 3px,
+        transparent 3px
+      ),
+      radial-gradient(circle at 30% 50%, var(--white) 3px, transparent 3px),
+      radial-gradient(circle at 50% 50%, var(--white) 3px, transparent 3px),
+      radial-gradient(circle at 70% 50%, var(--white) 3px, transparent 3px),
+      radial-gradient(circle at 90% 50%, var(--white) 3px, transparent 3px);
+  }
+}
+
 .orders {
   @extend %flex-section;
   padding-top: get4BasedSize(10);
@@ -40,6 +62,11 @@
 
     @include responsive(tablet) {
       gap: get4BasedSize(7.5);
+      justify-content: center;
+    }
+
+    @include responsive(laptop) {
+      justify-content: initial;
     }
   }
 
@@ -74,44 +101,55 @@
     width: 100px;
   }
 
-  @include responsive(laptop) {
-    &:not(:last-child) {
+  @include responsive(small-tablet) {
+    &:nth-child(2n + 1):not(:last-child) {
       .step__image {
-        position: relative;
+        @include step-dots;
 
         &:after {
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 100%;
-          transform: translateY(-50%);
+          width: 293px;
+        }
+      }
+    }
+  }
+
+  @include responsive(tablet) {
+    &:nth-child(2n + 1):not(:last-child) {
+      .step__image {
+        &:after {
+          width: 0;
+        }
+      }
+    }
+    &:nth-child(3n + 1):not(:last-child),
+    &:nth-child(3n + 2):not(:last-child) {
+      .step__image {
+        @include step-dots;
+
+        &:after {
+          width: 253px;
+        }
+      }
+    }
+  }
+
+  @include responsive(laptop) {
+    &:nth-child(3n + 2):not(:last-child) {
+      .step__image {
+        &:after {
+          width: 0;
+        }
+      }
+    }
+    &:nth-child(5n + 1):not(:last-child),
+    &:nth-child(5n + 2):not(:last-child),
+    &:nth-child(5n + 3):not(:last-child),
+    &:nth-child(5n + 4):not(:last-child) {
+      .step__image {
+        @include step-dots;
+
+        &:after {
           width: 134px;
-          height: 6px;
-          background-image: radial-gradient(
-              circle at 10% 50%,
-              var(--white) 3px,
-              transparent 3px
-            ),
-            radial-gradient(
-              circle at 30% 50%,
-              var(--white) 3px,
-              transparent 3px
-            ),
-            radial-gradient(
-              circle at 50% 50%,
-              var(--white) 3px,
-              transparent 3px
-            ),
-            radial-gradient(
-              circle at 70% 50%,
-              var(--white) 3px,
-              transparent 3px
-            ),
-            radial-gradient(
-              circle at 90% 50%,
-              var(--white) 3px,
-              transparent 3px
-            );
         }
       }
     }
