@@ -1,3 +1,6 @@
+import { CustomRange } from "./components/CustomRange";
+import CustomSelect from "./components/CustomSelect";
+
 document.addEventListener("DOMContentLoaded", () => {
   const menuButton = document.querySelector(".header__menu-button");
   const nav = document.querySelector(".header__nav");
@@ -13,5 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
     nav?.classList.remove("header__nav--active");
     menuButton?.classList.remove("header__menu-button--active");
     overlay?.classList.remove("overlay--active");
+  });
+
+  new CustomSelect({
+    selector: ".form__select",
+  });
+
+  new CustomRange(".form__range", {
+    unit: "%",
   });
 });

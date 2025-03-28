@@ -1,0 +1,59 @@
+.custom-select {
+  position: relative;
+
+  &__native {
+    @include visually-hidden;
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $gutter-12 $gutter-16;
+    border: 1px solid var(--white);
+    border-radius: get4BasedSize(0.75);
+    cursor: pointer;
+    background: var(--input-background);
+    outline: none;
+  }
+
+  &__placeholder {
+    flex: 1;
+    color: var(--button-secondary-border);
+  }
+
+  &__options {
+    position: absolute;
+    width: 100%;
+    max-width: 370px;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid var(--white);
+    border-radius: get4BasedSize(0.75);
+    margin-top: get4BasedSize(1);
+    background: white;
+    z-index: 1000;
+    display: none;
+
+    &[aria-expanded="true"] {
+      display: block;
+    }
+  }
+
+  &__option {
+    padding: $gutter-12 $gutter-16;
+    cursor: pointer;
+
+    &:hover,
+    &[aria-selected="true"] {
+      background-color: var(--primary-dark);
+      color: var(--white);
+    }
+  }
+
+  &__is-open {
+    .icon {
+      transform: rotate(180deg);
+    }
+  }
+}
