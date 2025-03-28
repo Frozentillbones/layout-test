@@ -3,6 +3,7 @@
   line-height: 100%;
   letter-spacing: 0%;
   vertical-align: middle;
+  word-break: break-word;
 
   &--uppercase {
     text-transform: uppercase;
@@ -76,6 +77,8 @@
   line-height: 100%;
   letter-spacing: 0%;
   vertical-align: middle;
+  word-break: break-word;
+
   &__logo {
     font-size: calcRem(28);
   }

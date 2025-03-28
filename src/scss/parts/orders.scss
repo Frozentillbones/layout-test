@@ -11,6 +11,10 @@
     padding-bottom: get4BasedSize(20);
   }
 
+  &__span {
+    color: var(--primary-dark);
+  }
+
   &__title {
     display: flex;
     flex-direction: column;
@@ -18,10 +22,6 @@
 
     @include responsive(tablet) {
       gap: get4BasedSize(7.5);
-    }
-
-    span {
-      color: var(--primary-dark);
     }
 
     .lato__h2 {

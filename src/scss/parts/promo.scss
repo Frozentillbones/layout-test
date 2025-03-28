@@ -9,10 +9,8 @@
     min-height: 850px;
   }
 
-  &__title {
-    span {
-      color: var(--primary-light);
-    }
+  &__span {
+    color: var(--primary-light);
   }
 
   &__content {
@@ -39,7 +37,8 @@
     }
 
     .button {
-      width: 183px;
+      width: 100%;
+      max-width: 183px;
     }
   }
 }

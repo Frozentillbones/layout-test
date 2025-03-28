@@ -20,10 +20,10 @@
     position: relative;
     color: var(--white);
     z-index: 1000;
+  }
 
-    span {
-      color: var(--primary-light);
-    }
+  &__span {
+    color: var(--primary-light);
   }
 
   &__nav {
@@ -141,6 +141,11 @@
     color: var(--white);
     will-change: color;
     transition: color $anim-dur-fast $anim-ease-in-out;
+
+    &--active {
+      color: var(--primary-main);
+    }
+
     &:hover {
       color: var(--primary-main);
     }

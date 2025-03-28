@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: get4BasedSize(4) 0;
+  gap: get4BasedSize(8) 0;
   padding-top: get4BasedSize(7.5);
   padding-bottom: get4BasedSize(7.5);
   background-color: var(--footer-background);
@@ -18,25 +18,38 @@
     flex-basis: 100%;
     color: var(--white-text-primary);
     @include responsive(laptop) {
-      flex-basis: fit-content;
+      flex-basis: 33.3%;
     }
   }
 
   &__copyright {
-    @include responsive(tablet) {
-      padding-right: get4BasedSize(10);
+    position: relative;
+    &:after {
+      position: absolute;
+      content: "";
+      display: block;
+      bottom: get4BasedSize(-4);
+      left: 50%;
+      transform: translateX(-50%);
+      width: get4BasedSize(4.5);
+      height: 1px;
+      background-color: var(--white-text-tertiary);
     }
-  }
 
-  &__payments {
-    @include responsive(tablet) {
-      padding: 0 get4BasedSize(10);
-    }
-  }
+    @include responsive(laptop) {
+      display: flex;
+      align-items: center;
+      padding-right: get4BasedSize(9.5);
+      text-align: left;
 
-  &__contacts {
-    @include responsive(tablet) {
-      padding-left: get4BasedSize(10);
+      &:after {
+        height: get4BasedSize(4);
+        width: 1px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: unset;
+        right: get4BasedSize(9.5);
+      }
     }
   }
 
@@ -49,13 +62,33 @@
     gap: get4BasedSize(4) get4BasedSize(9.5);
   }
 
-  &__divider {
-    width: get4BasedSize(4.5);
-    height: 1px;
-    background-color: var(--white-text-tertiary);
-    @include responsive(tablet) {
-      width: 1px;
-      height: auto;
+  &__contacts {
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: "";
+      display: block;
+      top: get4BasedSize(-4);
+      left: 50%;
+      transform: translateX(-50%);
+      width: get4BasedSize(4.5);
+      height: 1px;
+      background-color: var(--white-text-tertiary);
+    }
+
+    @include responsive(laptop) {
+      padding-left: get4BasedSize(9.5);
+      justify-content: flex-end;
+
+      &:after {
+        height: get4BasedSize(4);
+        width: 1px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: get4BasedSize(9.5);
+        right: unset;
+      }
     }
   }
 }
@@ -66,5 +99,13 @@
     display: flex;
     align-items: center;
     gap: get4BasedSize(2.5);
+  }
+}
+
+.contacts {
+  &__item {
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

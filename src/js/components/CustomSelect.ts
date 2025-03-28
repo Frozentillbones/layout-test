@@ -1,4 +1,3 @@
-// CustomSelect.ts
 interface CustomSelectOptions {
   selector: string;
   placeholder?: string;
@@ -6,6 +5,8 @@ interface CustomSelectOptions {
   onClose?: () => void;
   onChange?: (value: string) => void;
 }
+
+const isDev = process.env.NODE_ENV === "development";
 
 class CustomSelect {
   private element: HTMLElement;
@@ -42,7 +43,9 @@ class CustomSelect {
         <span class="custom-select__placeholder">${
           selectedOption?.text || this.config.placeholder
         }</span>
-    <svg class="icon"><use href="../img/svg/sprite.svg#arrow" /></svg>
+    <svg class="icon"><use href="${
+      isDev ? "." : ""
+    }./img/svg/sprite.svg#arrow" /></svg>
       `;
 
     const optionsList = document.createElement("div");
