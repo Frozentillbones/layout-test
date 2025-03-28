@@ -50,19 +50,22 @@ const watcher = () => {
   gulp.watch(pathConfig.watch.svg, sprite);
 };
 
-const build = gulp.series(html);
+const buildHTML = gulp.series(html);
 
 const buildScriptsAndStyles = gulp.parallel(scss, scripts);
 
-const buildFiles = gulp.parallel(copy, images, fonts, sprite);
+const buildFiles = gulp.parallel(copy, images, copySVGImages, fonts, sprite);
+
+const build = gulp.series(clean, buildHTML, buildScriptsAndStyles, buildFiles);
 
 const dev = gulp.series(
-  gulp.parallel(build, buildScriptsAndStyles),
+  gulp.parallel(buildHTML, buildScriptsAndStyles),
   gulp.parallel(watcher, server)
 );
 
 export { dev };
 export { build };
+export { buildHTML };
 export { buildFiles };
 export { buildScriptsAndStyles };
 export { page };
